@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 
 export class Searchbar extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export class Searchbar extends React.Component {
       <header className="Searchbar">
         <form className="SearchForm " onSubmit={this.handleSubmit}>
           <button type="submit" className="SearchForm-button">
+            <Icon icon="mdi:magnify" width="28" height="28" />
             <span className="SearchForm-button-label">Search</span>
           </button>
 

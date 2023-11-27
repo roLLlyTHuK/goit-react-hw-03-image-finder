@@ -48,7 +48,7 @@ export class App extends Component {
   };
 
   handleLoadMore = () => {
-    this.fetchImagesWrapper();
+    this.fetchImagesWrapper()
   };
 
   handleImageClick = (imageUrl) => {
