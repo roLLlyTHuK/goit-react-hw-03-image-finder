@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
-import {ImageGallery} from './ImageGallery/ImageGallery';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
-import {Loader2} from './Loader/Loader';
+import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { fetchImages } from './Services/Services';
-// import styles from './styles.css';
+
 
 export class App extends Component {
   state = {
@@ -20,7 +20,6 @@ export class App extends Component {
   async fetchImagesWrapper() {
     const { query, page } = this.state;
     if (query !== '') {
-      
       try {
         this.setState({ isLoading: true });
         const newImages = await fetchImages(query, page);
@@ -66,7 +65,7 @@ export class App extends Component {
       <div className='App'>
         <Searchbar onSubmit={this.handleSearchSubmit} />
         <ImageGallery images={images} onImageClick={this.handleImageClick} />
-        {isLoading && <Loader2 />}
+        {isLoading && <Loader />}
         {images.length > 0 && !isLoading && <Button onClick={this.handleLoadMore} />}
         {showModal && <Modal isOpen={showModal} image={selectedImage} onClose={this.handleCloseModal} />}
       </div>

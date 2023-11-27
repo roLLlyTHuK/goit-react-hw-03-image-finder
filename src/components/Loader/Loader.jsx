@@ -1,6 +1,5 @@
-export const Loader2 = () => {
+export const Loader = () => {
     return (
-        
         <div className="Loader">
              <div className="Section-left"></div>
             <div className="Section-right"></div>

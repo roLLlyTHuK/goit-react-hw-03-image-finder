@@ -1,13 +1,14 @@
 import React from 'react';
 
-export class ImageGalleryItem extends React.Component {
-  render() {
-    const { image, onClick } = this.props;
-    return (
-      <li className="ImageGalleryItem" onClick={() => onClick(image.largeImageURL)}>
-        <img className='ImageGalleryItem-image' src={image.webformatURL} alt="" />
-      </li>
-    );
-  }
-}
+export const ImageGalleryItem = ({ image, onClick }) => {
+  const handleClick = () => {
+    onClick(image.largeImageURL);
+  };
+
+  return (
+    <li className="ImageGalleryItem" onClick={handleClick}>
+      <img className="ImageGalleryItem-image" src={image.webformatURL} alt="" />
+    </li>
+  );
+};
 

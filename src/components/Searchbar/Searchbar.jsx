@@ -2,13 +2,10 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 
 export class Searchbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       query: '',
     };
-  }
-
+  
   handleChange = (e) => {
     this.setState({ query: e.target.value });
   };
