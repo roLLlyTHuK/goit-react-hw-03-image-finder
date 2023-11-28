@@ -21,7 +21,6 @@ export class App extends Component {
     showModal: false,
     selectedImage: '',
     totalCount: 0,
-    // myApp: React.createRef(),
   };
 
   handleSearchSubmit = (query) => {
@@ -33,6 +32,7 @@ export class App extends Component {
       selectedImage: '',
     });
   };
+
   handleLoadMore = () => {
     this.setState(prev => {
       return { page: prev.page + 1 };
@@ -53,7 +53,6 @@ export class App extends Component {
       fetchImages(this.state.query, this.state.page, perPage)
         .then(responce => {
           if (responce.data.totalHits === 0) return alert('No data for this search');
-
           this.setState(prev => {
             return {
               images: [...prev.images, ...responce.data.hits],
@@ -74,6 +73,7 @@ export class App extends Component {
 
     return (
       <div className='App' ref={this.myApp}>
+        
         <Searchbar onSubmit={this.handleSearchSubmit} />
 
         <ImageGallery images={images} onImageClick={this.handleImageClick} />
