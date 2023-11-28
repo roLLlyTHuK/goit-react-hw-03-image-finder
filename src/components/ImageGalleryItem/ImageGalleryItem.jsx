@@ -7,7 +7,7 @@ export const ImageGalleryItem = ({ image, onClick }) => {
 
   return (
     <li className="ImageGalleryItem" onClick={handleClick}>
-      <img className="ImageGalleryItem-image" src={image.webformatURL} alt="" />
+      <img className="ImageGalleryItem-image" src={image.webformatURL} alt="" loading="lazy" />
     </li>
   );
 };
