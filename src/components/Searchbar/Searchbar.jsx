@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Icon } from '@iconify/react';
 
-export class Searchbar extends React.Component {
+export class Searchbar extends Component {
   state = {
       query: '',
     };
